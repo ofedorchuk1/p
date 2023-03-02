@@ -1,6 +1,7 @@
 import {Link, Outlet} from "react-router-dom";
 import './styles.css'
 import CartIcon from "../Icons/Cart";
+import avatar from '../../assests/image/avatar.png'
 export default function Header({clickHandler, isAuth, authData}){
 
   return (<>
@@ -16,7 +17,7 @@ export default function Header({clickHandler, isAuth, authData}){
               </Link>
 
                   <button className="header-icons__btn btn btn-light btn-outline-dark btn-style btn-sign-out" onClick={clickHandler}>Sign-Out</button>
-                  <img src="/image/avatar.png" alt="avatar" className="header-icons__avatar"/>
+                  <img src={avatar} alt="avatar" className="header-icons__avatar"/>
                   <p className="header-icons__username">{authData}</p>
               </div>
           }

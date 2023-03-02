@@ -10,7 +10,7 @@ import {useEffect, useState} from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PageNotFound from "./pages/PageNotFound";
 import {DataContext} from "./context";
-
+import data from "./books.json"
 function App() {
 
     const [isAuth, setIsAuth] = useState(true);
@@ -39,11 +39,11 @@ function App() {
     const [isDisabled, setIsDisabled] =useState(true)
 
     useEffect(()=>{
-        fetch('/books.json')
-            .then(r => r.json())
-            .then(res => {
-                setBookList(res.books)})
-
+        // fetch('/data.json')
+        //     .then(r => r.json())
+        //     .then(res => {
+        //         setBookList(res.books)})
+        setBookList(data.books)
     }, [])
     useEffect(()=>{
         localStorage.setItem('list', JSON.stringify(bookList))

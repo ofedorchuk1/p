@@ -2,7 +2,7 @@ import './style.css'
 import {useContext, useEffect, useState} from "react";
 import {DataContext} from "../../context";
 import {useParams} from "react-router-dom";
-
+import imageNotFound from '../../assests/image/imageNotFound.png'
 
 export default function FullBook (){
     const {bookList, cart, setCart} = useContext(DataContext)
@@ -65,7 +65,7 @@ export default function FullBook (){
     return (
         <main className="specific-book-wrapper">
             <div className="book-img-wrapper">
-                <img src={book.image ? book.image : '/image/imageNotFound.png'} alt="bookImage"/>
+                <img src={book.image ? book.image : imageNotFound} alt="bookImage"/>
             </div>
             <div className="book-content">
                 <p className="book-content__name"><span>Book name: </span>{book.title}</p>

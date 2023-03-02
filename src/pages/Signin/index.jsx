@@ -1,6 +1,7 @@
 import './style.css'
 import {useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
+import avatar from '../../assests/image/avatar.png'
 export default function Signin ({isAuth, clickHandler}){
     const [btnDisabled, setBtnDisabled] = useState(false)
     const [username, setUsername] = useState(localStorage.getItem('username') || '')
@@ -19,7 +20,7 @@ export default function Signin ({isAuth, clickHandler}){
             <Navigate to="/books" replace />
             :
             <main className="signin-main-wrapper">
-                <img src="./image/avatar.png" alt="avatar" className="signin-avatar"/>
+                <img src={avatar} alt="avatar" className="signin-avatar"/>
                     <p className="signin-username">Username</p>
                     <input type="text" placeholder="type Username" className="signin-input form-control" onChange={usernameChange} value={username}/>
                         <button className="signin-btn btn btn-light btn-outline-dark btn-style" disabled={btnDisabled} onClick={clickHandler}>Sign-In</button>
